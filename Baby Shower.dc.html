@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Melissa &amp; Michael's Baby Shower</title>
+  <meta name="description" content="Join us for a golf-themed baby shower — Oct 17, 1-4 PM in Lynnwood, WA. Golf sims, sports sims, crafts, food, and good company.">
+  <meta property="og:title" content="Melissa &amp; Michael's Baby Shower">
+  <meta property="og:description" content="It's a boy! Golf sims, sports sims, crafts, and food — Oct 17, 1-4 PM in Lynnwood, WA.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="_ds/broadsheet-adc7e3ac-0a24-4be5-a9c6-73425bcd3dbb/styles.css">
+  <style>
+    html, body { background: var(--color-accent-100); -webkit-font-smoothing: antialiased; }
+    .icon { width: 22px; height: 22px; flex: none; }
+    @keyframes bob { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-10px) rotate(4deg); } }
+    @keyframes bob2 { 0%, 100% { transform: translateY(0) rotate(6deg); } 50% { transform: translateY(-16px) rotate(-6deg); } }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ball-trail { display: flex; align-items: center; gap: 10px; }
+    .ball-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); opacity: 0.5; }
+    .ball-dot:nth-child(3n) { background: var(--color-accent-2); }
+    .ball-dot:nth-child(4n) { background: var(--color-process-yellow); }
+    .marquee-track { display: flex; width: max-content; animation: marquee 16s linear infinite; }
+    .marquee-track span { white-space: nowrap; padding: 0 var(--space-3); font-family: var(--font-heading); font-weight: 600; font-size: 18px; }
+    @media (max-width: 640px) {
+      .hero-doodle { display: none; }
+      .hero-doodle-mobile { display: block !important; }
+      .photo-doodle { transform: scale(0.6) !important; z-index: 2; }
+      .photo-doodle:first-of-type { left: 4px !important; top: -6px !important; }
+      .photo-doodle:last-of-type { right: 4px !important; bottom: -6px !important; }
+      .gifting-grid { grid-template-columns: 1fr !important; }
+      .hero-cards-desktop { display: none !important; }
+      .hero-card-mobile { display: flex !important; }
+    }
+    .hero-card-mobile { display: none; }
+  </style>
+</helmet>
+
+<div style="background: var(--color-accent-100); min-height: 100vh; overflow: hidden;">
+
+  <!-- HERO -->
+  
+
+  <!-- DETAILS / MAP -->
+  
+
+  <section style="max-width: 900px; margin: 0 auto; padding: var(--space-8) var(--space-4) var(--space-6); position: relative;">
+    <sc-if value="{{ showGolfDoodles }}" hint-placeholder-val="{{ true }}">
+      <img class="hero-doodle" src="assets2/golf-ball.svg" style="position: absolute; top: 0px; right: 30px; width: 66px; animation: bob 3.2s ease-in-out infinite; animation-play-state: {{ animPlayState }};">
+      <img class="hero-doodle" src="assets2/flag.svg" style="position: absolute; top: 270px; right: 110px; width: 42px; animation: bob2 2.6s ease-in-out infinite; animation-play-state: {{ animPlayState }};">
+      <img class="hero-doodle" src="assets2/club-ball.svg" style="position: absolute; top: 185px; width: 64px; animation: bob 3.6s ease-in-out infinite 0.4s; animation-play-state: {{ animPlayState }}; left: 520px">
+    </sc-if>
+    <sc-if value="{{ showBabyDoodles }}" hint-placeholder-val="{{ true }}">
+      <img class="hero-doodle" src="assets2/rattle.svg" style="position: absolute; top: 340px; right: 20px; width: 40px; animation: bob2 3s ease-in-out infinite 0.6s; animation-play-state: {{ animPlayState }};">
+      <img class="hero-doodle" src="assets2/bottle.svg" style="position: absolute; top: 40px; right: 200px; width: 44px; animation: bob 3.4s ease-in-out infinite 0.8s; animation-play-state: {{ animPlayState }};">
+      <img class="hero-doodle-mobile" src="assets2/golf-ball.svg" style="display: none; position: absolute; top: 76px; width: 9vw; min-width: 28px; max-width: 44px; animation: bob 3.2s ease-in-out infinite; animation-play-state: {{ animPlayState }}; right: 2vw">
+      <img class="hero-doodle-mobile" src="assets2/flag.svg" style="display: none; position: absolute; top: 30px; width: 6vw; min-width: 20px; max-width: 28px; animation: bob 3.6s ease-in-out infinite 0.4s; animation-play-state: {{ animPlayState }}; right: 11vw">
+      <img class="hero-doodle-mobile" src="assets2/bottle.svg" style="display: none; position: absolute; top: 153px; width: 6vw; min-width: 20px; max-width: 30px; animation: bob 3.4s ease-in-out infinite 0.8s; animation-play-state: {{ animPlayState }}; right: 4vw">
+    </sc-if>
+    <div class="tag tag-accent-2" style="font-size: 14px; padding: 7px 16px; transform: {{ tagTilt }}; margin-bottom: var(--space-3); box-shadow: var(--shadow-sm); color: var(--color-bg); background-color: var(--color-accent-500); font-weight: 900">It's a boy! 🐣</div>
+    <h1 style="font-size: clamp(40px, 8vw + 20px, 80px); line-height: 0.98; max-width: 12ch; margin-bottom: var(--space-3);">
+      We're teeing off <span style="color: var(--color-accent-700); font-style: italic; text-decoration: underline {{ underlineStyle }} {{ popColor }}; text-decoration-thickness: 3px; text-underline-offset: 8px;">into parenthood.</span>
+    <img class="hero-doodle-mobile" src="assets2/rattle.svg" style="display: none; position: absolute; top: 181px; width: 9vw; min-width: 28px; max-width: 44px; animation: bob2 3s ease-in-out infinite 0.6s; animation-play-state: {{ animPlayState }}; right: 15vw"></h1>
+    <p style="font-size: 20px; max-width: 46ch; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Melissa &amp; Michael are hosting a baby shower with a full 18 holes of fun — sims, snacks, and smiles. Come swing by!</p>
+
+    <div class="hero-cards-desktop" style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8);">
+      <div class="card elev-sm" style="flex: 1; min-width: 200px; transform: {{ card1Tilt }}; background-color: var(--color-accent-900)">
+        <div class="card-kicker" style="color: var(--color-accent-200)">Save the date</div>
+        <div class="card-title" style="color: var(--color-neutral-100)">Sat, Oct 17 · 2026</div>
+        <p class="card-body" style="margin: 0; color: var(--color-neutral-100)">1:00 – 4:00 PM</p>
+      </div>
+      <div class="card elev-sm" style="flex: 1; min-width: 200px; transform: {{ card2Tilt }}; background-color: var(--color-accent-900)">
+        <div class="card-kicker" style="color: var(--color-accent-200)">Tee time location</div>
+        <div class="card-title" style="color: var(--color-neutral-100)">Back 9 Parlor</div>
+        <p class="card-body" style="margin: 0; color: var(--color-neutral-100)">3105 Alderwood Mall Blvd, Lynnwood, WA</p>
+      </div>
+    </div>
+    <div class="hero-card-mobile card elev-sm" style="flex-direction: column; gap: var(--space-2); margin-top: var(--space-8); background-color: var(--color-accent-900)">
+      <div class="card-kicker" style="color: var(--color-accent-200)">Save the date &amp; tee time</div>
+      <div class="card-title" style="color: var(--color-neutral-100)">Sat, Oct 17 · 2026, 1:00 – 4:00 PM</div>
+      <p class="card-body" style="margin: 0; color: var(--color-neutral-100)">Back 9 Parlor — 3105 Alderwood Mall Blvd, Lynnwood, WA</p>
+    </div>
+  </section><section id="details" style="max-width: 900px; margin: 0 auto; padding: var(--space-6) var(--space-4);">
+    <h2 style="max-width: 20ch;">We can't wait to celebrate with you all.</h2>
+    <p style="max-width: 56ch;">This one's for the whole crew, kids included — there's something for every age. Just come as you are, casual dress, and get ready to celebrate. Free parking is right outside, so getting settled in is easy.</p>
+    
+  </section><div class="ball-trail" style="max-width: 900px; margin: var(--space-6) auto; padding: 0 var(--space-4);">
+    <div class="ball-dot"></div><div class="ball-dot"></div><div class="ball-dot"></div><div class="ball-dot"></div>
+    <div class="ball-dot"></div><div class="ball-dot"></div><div class="ball-dot"></div><div class="ball-dot"></div>
+    <div class="ball-dot"></div><div class="ball-dot"></div><div class="ball-dot"></div><div class="ball-dot"></div>
+  </div>
+
+  <sc-if value="{{ lively }}" hint-placeholder-val="{{ true }}">
+    <div style="overflow: hidden; padding: var(--space-2) 0; transform: rotate(-1deg); margin: var(--space-6) -20px; background-color: var(--color-accent-500)">
+      <div class="marquee-track">
+        <span style="color: var(--color-bg);">TEE TIME ⛳</span>
+        <span style="color: var(--color-accent-300)">BABY TIME 👶</span>
+        <span style="color: var(--color-bg);">GOOD TIMES 🏆</span>
+        <span style="color: var(--color-accent-300)">FORE! ⛳</span>
+        <span style="color: var(--color-bg);">TEE TIME ⛳</span>
+        <span style="color: var(--color-accent-300)">BABY TIME 👶</span>
+        <span style="color: var(--color-bg);">GOOD TIMES 🏆</span>
+        <span style="color: var(--color-accent-300)">FORE! ⛳</span>
+        <span style="color: var(--color-bg);">TEE TIME ⛳</span>
+        <span style="color: var(--color-process-yellow);">BABY TIME 👶</span>
+        <span style="color: var(--color-bg);">GOOD TIMES 🏆</span>
+        <span style="color: var(--color-process-yellow);">FORE! ⛳</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ACTIVITIES -->
+  <section id="activities" style="max-width: 900px; margin: 0 auto; padding: var(--space-6) var(--space-4);">
+    <h6 style="color: var(--color-accent-2-700);">On the course</h6>
+    <h2 style="max-width: 22ch; margin-bottom: var(--space-2);">Golf optional. Good times mandatory.</h2>
+    <p style="max-width: 56ch; margin-bottom: var(--space-4);">Never swung a club? No worries — the bays are just one option. There's plenty to do without ever picking up a golf club.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3);">
+      <div class="card elev-sm" style="background-color: #FFFFFF">
+        <img src="assets2/golf-ball.svg" style="width: 46px; margin-bottom: 2px;">
+        <div class="tag tag-accent" style="width: fit-content;">Golf Sim</div>
+        <div class="card-title">World-famous courses</div>
+        <p class="card-body">Play a virtual round on world-famous courses — totally optional, and beginners very welcome.</p>
+      </div>
+      <div class="card elev-sm" style="background-color: #FFFFFF">
+        <img src="assets2/flag.svg" style="width: 43px; margin-bottom: 2px; height: 103px">
+        <div class="tag tag-accent" style="width: fit-content;">Golf Sim</div>
+        <div class="card-title">Closest to the pin</div>
+        <p class="card-body">Take your best shot in a friendly closest-to-the-pin competition. Bragging rights included.</p>
+      </div>
+      <div class="card elev-sm" style="background-color: #FFFFFF">
+        <img src="assets2/trophy.svg" style="width: 54px; margin-bottom: 2px;">
+        <div class="tag" style="width: fit-content; background: {{ popColor }}; color: {{ popColorText }};">Sports Sim</div>
+        <div class="card-title">Hockey, baseball, football &amp; more</div>
+        <p class="card-body">Test your skills with your favorite teams — no clubs required.</p>
+      </div>
+      <div class="card elev-sm" style="background-color: #FFFFFF">
+        <img src="assets2/toy.svg" style="width: 48px; margin-bottom: 2px;">
+        <div class="tag tag-neutral" style="width: fit-content; background-color: var(--color-neutral-300)">Craft Corner</div>
+        <div class="card-title">Baby crafts</div>
+        <p class="card-body">Help us start creating keepsakes for Baby Drackley -- custom onesies, something sweet for the nursery, and more.&nbsp;</p>
+      </div>
+      <div class="card elev-sm" style="background-color: #FFFFFF;">
+        <img src="assets2/drink.svg" style="width: 67px; margin-bottom: 2px; height: 63px">
+        <div class="tag tag-neutral" style="width: fit-content; background-color: var(--color-accent-2-200); color: var(--color-accent-2-800)">19th Hole</div>
+        <div class="card-title">Food, drinks &amp; conversation</div>
+        <p class="card-body">Grab a bite, catch up, and relax — no clubs required, just good company.</p>
+      </div>
+      <div class="card elev-sm" style="background-color: #FFFFFF;">
+        <img src="assets2/rattle.svg" style="width: 46px; margin-bottom: 2px;">
+        <div class="tag tag-neutral" style="width: fit-content;">Notes for Later</div>
+        <div class="card-title">Advice for the road</div>
+        <p class="card-body">Leave a tip, a memory, or a prediction for the parents to open during a rough night at 3am.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUPLE PHOTO -->
+  <section style="max-width: 900px; margin: 0 auto; padding: var(--space-6) var(--space-4); display: flex; justify-content: center; position: relative; padding-top: 36px; padding-bottom: 36px">
+    <sc-if value="{{ showBabyDoodles }}" hint-placeholder-val="{{ true }}">
+      <img class="photo-doodle" src="assets2/onesie.svg" style="position: absolute; left: 40px; top: 20px; width: 62px; transform: {{ photoBabyTilt1 }};">
+      <img class="photo-doodle" src="assets2/ducky.svg" style="position: absolute; right: 20px; bottom: 10px; width: 80px; transform: {{ photoBabyTilt2 }};">
+    </sc-if>
+    <div style="width: 100%; max-width: 480px; transform: {{ photoTilt }}; background: var(--color-neutral-100); padding: 14px 14px 40px; box-shadow: var(--shadow-lg); position: relative;">
+      <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%) rotate(-4deg); background: color-mix(in srgb, var(--color-process-yellow) 55%, transparent); width: 90px; height: 26px;"></div>
+      <div class="halftone">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="couple-photo" shape="rect" placeholder="Drop a photo of the two of you" hint-size="480px,320px" style="width: 100%; height: 320px;"></x-import>
+      </div>
+      <div style="text-align: center; font-family: var(--font-heading); font-style: italic; margin-top: var(--space-2); color: var(--color-accent-2-700);">our future golfer</div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  
+
+  <!-- REGISTRY & TRAVEL -->
+  <section id="rsvp" style="max-width: 900px; margin: 0 auto; padding: var(--space-6) var(--space-4); background: var(--color-accent-100); border-radius: var(--radius-lg); border: 3px dashed {{ popColor }}; border-style: none; padding-top: 48px; padding-bottom: 48px">
+    <h6 style="color: var(--color-accent-700); text-align: center">Don't leave us hanging</h6>
+    <h2 style="text-align: center">RSVP &amp; let's tee off together</h2>
+    <p style="margin-bottom: var(--space-4); text-align: center; width: 100%">Let us know you're coming by October 3rd</p><form style="display: flex; flex-direction: column; align-items: center; gap: var(--space-3); max-width: 420px; margin: 0 auto" onSubmit="{{ handleSubmit }}">
+        <div class="field" style="width: 100%">
+          <label for="rsvp-name">Name</label>
+          <input class="input" id="rsvp-name" type="text" required="{{ true }}" value="{{ name }}" onChange="{{ setName }}" style="background: #fff;">
+        </div>
+        <div class="field" style="width: 100%">
+          <label for="rsvp-email">Email</label>
+          <input class="input" id="rsvp-email" type="email" required="{{ true }}" value="{{ email }}" onChange="{{ setEmail }}" style="background: #fff;">
+        </div>
+        <div class="field" style="width: 100%">
+          <label>Will you make it?</label>
+          <div class="seg">
+            <label class="seg-opt">
+              <input type="radio" name="attending" value="yes" checked="{{ attendingYes }}" onChange="{{ setAttendingYes }}">
+              <span>I'm in!</span>
+            </label>
+            <label class="seg-opt">
+              <input type="radio" name="attending" value="no" checked="{{ attendingNo }}" onChange="{{ setAttendingNo }}">
+              <span>Can't make it</span>
+            </label>
+          </div>
+        </div>
+        <div class="field" style="width: 100%">
+          <label for="rsvp-guests">Guests (including you)</label>
+          <input class="input" id="rsvp-guests" type="number" min="1" max="6" value="{{ guests }}" onChange="{{ setGuests }}" style="background: #fff;">
+        </div>
+        <div class="field" style="width: 100%">
+          <label for="rsvp-notes">Anything we should know? (allergies, tee-time jitters, etc.)</label>
+          <textarea class="input" id="rsvp-notes" rows="3" value="{{ notes }}" onChange="{{ setNotes }}" style="background: #fff;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send RSVP</button>
+      </form>
+
+    <sc-if value="{{ !submitted }}" hint-placeholder-val="{{ true }}">
+      
+    </sc-if>
+    <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+      <div class="card elev-md" style="max-width: 420px;">
+        <div class="card-kicker">Thanks, {{ name }}!</div>
+        <div class="card-title">See you on the green.</div>
+        <p class="card-body">We've got you down. Fore-warned: it's going to be a great afternoon.</p>
+      </div>
+    </sc-if>
+  </section><section id="registry" style="max-width: 900px; margin: 0 auto; padding: var(--space-6) var(--space-4) var(--space-8);">
+    <img src="assets2/gift.svg" style="width: 36px; transform: {{ giftTilt }}; margin-left: var(--space-2); margin-bottom: 9px"><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6);">
+      <div style="display: grid">
+        <h6 style="color: var(--color-accent-2-700);">Gifting</h6>
+        <div class="gifting-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: start;">
+          <div style="display: grid; gap: var(--space-2);"><h2 style="margin: 0;">Build our Library</h2><div>In lieu of a card, raid your own bookshelf for a favorite children's book — old or new — and write us a little note inside about why it made the cut.</div></div>
+          <div style="display: grid; gap: var(--space-3);"><h2 style="margin: 0;">Registry</h2><p style="margin: 0;">Your presence is the real prize, but if you'd like to help us stock the nursery, we are registered on Babylist.</p><a class="btn btn-secondary" style="width: fit-content; background-color: #FFFFFF" href="https://my.babylist.com/melissa-michael-drackley" target="_blank" rel="noopener noreferrer">View Babylist registry</a></div>
+        </div>
+      </div>
+      
+    </div><div style="padding-top: 48px">
+        <h6 style="color: var(--color-accent-2-700);">Coming from out of town?</h6>
+        <h2>Where to stay</h2>
+        <p style="max-width: 42ch; margin-bottom: var(--space-3);">A few options nearby:</p>
+        <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+          <div class="card elev-sm" style="gap: 4px; background-color: #FFFFFF">
+            <div class="card-title" style="font-size: 15px;"><a href="https://www.hilton.com/en/hotels/sealyhx-hampton-suites-seattle-north-lynnwood/?SEO_id=GMB-AMER-HX-SEALYHX"><div>Hampton Inn &amp; Suites Seattle-North/Lynnwood</div></a></div>
+          </div>
+          <div class="card elev-sm" style="gap: 4px; background-color: #FFFFFF">
+            <div class="card-title" style="font-size: 15px;"><a href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=SEALNGI&amp;arrivalDate=2026-10-15&amp;departureDate=2026-10-18&amp;room1NumAdults=2&amp;inputModule=HOTEL_SEARCH&amp;viewPackagesAndPromotionsRate=true&amp;WT.mc_id=zLADA0US1GI2OLX3GGL4ADVMETA5LF6_SEALNGI7_129231037_&amp;adType=PD&amp;gclid=CjwKCAjw08fSBhA7EiwAfbQTsPxhY1fpsCEbcERLzRdO4XYq9rKi0ubLXKoFWhuryLs0IScAH1-gEhoCqOAQAvD_BwE&amp;dsclid=79593840962445312&amp;dclid=COPk1aSay5UDFba1KQgdYDI4wg&amp;hmGUID=2678899a-f70a-4c23-b2d5-956068bde435">Holiday Inn Express &amp; Suites Seattle North – Lynnwood by IHG</a></div>
+          </div>
+          <div class="card elev-sm" style="gap: 4px; background-color: #FFFFFF">
+            <div class="card-title" style="font-size: 15px;">Looking for an Airbnb?</div>
+            <p class="card-body">Edmonds and Lynnwood are both great home bases.</p>
+          </div>
+        </div>
+        <p class="text-muted" style="margin-top: var(--space-3);">Prefer to stay in downtown Seattle? We're about 20 miles north — an easy Uber.</p>
+      </div>
+  </section>
+
+  <footer style="max-width: 900px; margin: 0 auto; padding: var(--space-6) var(--space-4) var(--space-8); border-top: none;">
+    <p class="text-muted" style="margin: 0;">Questions? Reach Melissa &amp; Michael anytime. Can't wait to putt-put around with you.</p>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{},&quot;energyLevel&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;lively&quot;,&quot;options&quot;:[&quot;lively&quot;,&quot;relaxed&quot;],&quot;tsType&quot;:&quot;'lively' | 'relaxed'&quot;,&quot;section&quot;:&quot;Mood&quot;},&quot;doodleFocus&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;mixed&quot;,&quot;options&quot;:[&quot;mixed&quot;,&quot;golf&quot;,&quot;baby&quot;],&quot;tsType&quot;:&quot;'mixed' | 'golf' | 'baby'&quot;,&quot;section&quot;:&quot;Mood&quot;},&quot;popAccent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;yellow&quot;,&quot;options&quot;:[&quot;magenta&quot;,&quot;yellow&quot;],&quot;tsType&quot;:&quot;'magenta' | 'yellow'&quot;,&quot;section&quot;:&quot;Mood&quot;}}">
+class Component extends DCLogic {
+  state = {
+    name: '',
+    email: '',
+    attending: 'yes',
+    guests: 2,
+    notes: '',
+    submitted: false,
+  };
+
+  renderVals() {
+    const energyLevel = this.props.energyLevel ?? 'lively';
+    const doodleFocus = this.props.doodleFocus ?? 'mixed';
+    const popAccent = this.props.popAccent ?? 'magenta';
+    const lively = energyLevel === 'lively';
+
+    const popColor = popAccent === 'yellow' ? 'var(--color-process-yellow)' : 'var(--color-accent-2)';
+    const popColorDeep = popAccent === 'yellow' ? '#8a6c00' : 'var(--color-accent-2-700)';
+    const popColorText = popAccent === 'yellow' ? '#3a2e00' : 'var(--color-bg)';
+
+    const showGolfDoodles = doodleFocus !== 'baby';
+    const showBabyDoodles = doodleFocus !== 'golf';
+
+    return {
+      name: this.state.name,
+      email: this.state.email,
+      guests: this.state.guests,
+      notes: this.state.notes,
+      submitted: this.state.submitted,
+      attendingYes: this.state.attending === 'yes',
+      attendingNo: this.state.attending === 'no',
+      setName: (e) => this.setState({ name: e.target.value }),
+      setEmail: (e) => this.setState({ email: e.target.value }),
+      setGuests: (e) => this.setState({ guests: e.target.value }),
+      setNotes: (e) => this.setState({ notes: e.target.value }),
+      setAttendingYes: () => this.setState({ attending: 'yes' }),
+      setAttendingNo: () => this.setState({ attending: 'no' }),
+      handleSubmit: (e) => {
+        e.preventDefault();
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwiMpuhrf96Pg3VV1DIu4bdAf-zvnkvq5hAG6_XT0vCiSt0BupS7TGovaG3Lw95NKX8/exec';
+        if (SHEET_URL.startsWith('http')) {
+          fetch(SHEET_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain' },
+            body: JSON.stringify({
+              name: this.state.name,
+              email: this.state.email,
+              attending: this.state.attending,
+              guests: this.state.guests,
+              notes: this.state.notes,
+              submittedAt: new Date().toISOString(),
+            }),
+          }).catch(() => {});
+        }
+        this.setState({ submitted: true });
+      },
+
+      lively,
+      showGolfDoodles,
+      showBabyDoodles,
+      animPlayState: lively ? 'running' : 'paused',
+      card1Tilt: lively ? 'rotate(-1.5deg)' : 'rotate(0deg)',
+      card2Tilt: lively ? 'rotate(1.5deg)' : 'rotate(0deg)',
+      tagTilt: lively ? 'rotate(-3deg)' : 'rotate(0deg)',
+      photoTilt: lively ? 'rotate(-2deg)' : 'rotate(0deg)',
+      photoBabyTilt1: lively ? 'rotate(-8deg)' : 'rotate(0deg)',
+      photoBabyTilt2: lively ? 'rotate(6deg)' : 'rotate(0deg)',
+      giftTilt: lively ? 'rotate(-6deg)' : 'rotate(0deg)',
+      underlineStyle: lively ? 'wavy' : 'solid',
+      popColor,
+      popColorDeep,
+      popColorText,
+    };
+  }
+}
+
+</script>
+</body>
+</html>
